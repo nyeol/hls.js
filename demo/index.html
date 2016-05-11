@@ -228,7 +228,8 @@ $(document).ready(function() {
   var video = $('#video')[0];
   video.volume = 0.05;
 
-  loadStream(decodeURIComponent(getURLParam('src','http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8')));
+//  loadStream(decodeURIComponent(getURLParam('src','http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8')));
+  loadStream(decodeURIComponent(getURLParam('src','http://bdyne.net/hls/dbfcAFZes8F7wrNZQtfMoHczmQ_rmcvideo_144P_256_100_32.m3u8')));
 
   function loadStream(url) {
     hideCanvas();
@@ -910,10 +911,21 @@ function timeRangesToString(r) {
     if(v.videoWidth) {
       $("#currentResolution").html("video resolution:" + v.videoWidth + 'x' + v.videoHeight);
     }
-    $("#currentLevelControl").html(html1);
-    $("#loadLevelControl").html(html2);
-    $("#levelCappingControl").html(html3);
-    $("#nextLevelControl").html(html4);
+    if($("#currentLevelControl").html() != html1) {
+      $("#currentLevelControl").html(html1);
+    }
+
+    if($("#loadLevelControl").html() != html2) {
+      $("#loadLevelControl").html(html2);
+    }
+
+    if($("#levelCappingControl").html() != html3) {
+      $("#levelCappingControl").html(html3);
+    }
+
+    if($("#nextLevelControl").html() != html4) {
+      $("#nextLevelControl").html(html4);
+    }
   }
 
   function level2label(index) {
